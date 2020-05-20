@@ -18,7 +18,7 @@ app.use(expressSanitizer());
 // });
 mongoose
   .connect(
-    "mongodb+srv://Siddharth:Siddharth@cluster0-a1tww.mongodb.net/test?retryWrites=true&w=majority",
+    "mongodb+srv://Siddharth:siddharth@cluster0-oskol.mongodb.net/test?retryWrites=true&w=majority",
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
