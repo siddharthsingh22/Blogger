@@ -16,13 +16,21 @@ app.use(expressSanitizer());
 //   useNewUrlParser: true,
 //   useUnifiedTopology: true,
 // });
-mongoose.connect(
-  "mongodb+srv://Siddharth:<password>@cluster0-thw82.mongodb.net/test?retryWrites=true&w=majority",
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  }
-);
+mongoose
+  .connect(
+    "mongodb+srv://Siddharth:Siddharth@cluster0-a1tww.mongodb.net/test?retryWrites=true&w=majority",
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    }
+  )
+  .then(() => {
+    console.log("connected to db");
+  })
+  .catch((err) => {
+    console.log("There is an error" + err.message);
+  });
+
 var blogSchema = new mongoose.Schema({
   title: String,
   desc: String,
