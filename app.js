@@ -8,7 +8,7 @@ var express = require("express"),
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.set("view engine", "ejs");
-app.listen(process.env.port || 3000, function () {
+app.listen(process.env.PORT || 3000, function () {
   console.log("server has started");
 });
 app.use(expressSanitizer());
