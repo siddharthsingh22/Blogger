@@ -1,0 +1,44 @@
+<%- include("partials/header") %>
+
+<div class="container">
+  <header class="jumbotron mb-3" style="margin-top: 10px;">
+    <div class="container" style="text-align: center;">
+      <h1>Welcome To Blogger</h1>
+      <p>Read tons of blog and share your own with the world !</p>
+      <p>
+        <a class="btn btn-info btn-large" href="/blogs/new">Write New Blog</a>
+      </p>
+    </div>
+  </header>
+
+  <div class="row text-center" style="display: flex; flex-wrap: wrap;">
+    <% blogData.forEach(function(eachBlogData){ %>
+    <div class="col-md-4 col-sm-6 mb-3">
+      <div class="card">
+        <div class="image">
+          <img
+            class="card-img-top rounded"
+            src="<%= eachBlogData.src %>"
+            style="width: 100%;"
+          />
+        </div>
+
+        <div class="card-body" style="background-color: #e9ecef;">
+          <h4 class="card-text"><%= eachBlogData.title %></h4>
+
+          <p style="font-weight: 300;">
+            <%= eachBlogData.createdOn.toDateString() %>
+          </p>
+          <div class="flex">
+            <a
+              href="/blogs/<%= eachBlogData._id %>"
+              class="btn btn-sm btn-info pl-3 pr-3"
+              >Read More</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <% }); %>
+  </div>
+</div>

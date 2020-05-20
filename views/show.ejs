@@ -1,0 +1,31 @@
+<%- include("partials/header") %>
+<div class="container mt-2" style="display: flex; justify-content: center;">
+  <div class="card" style="width: 45%;">
+    <h5 class="card-header"><%= returnedBlog.title %></h5>
+
+    <img src="<%= returnedBlog.src %>" class="card-img-top" alt="Image" />
+    <div class="card-body">
+      <p class="card-text" style="font-weight: 100;">
+        <%= returnedBlog.createdOn %>
+      </p>
+      <p class="card-text">
+        <%= returnedBlog.desc %>
+      </p>
+      <div style="display: flex;">
+        <a href="/blogs" class="btn btn-info mr-2">Go Back</a>
+        <a
+          href="/blogs/<%= returnedBlog._id %>/edit"
+          class="btn btn-success mr-2"
+          >Edit Blog</a
+        >
+        <form
+          action="/blogs/<%= returnedBlog._id %>?_method=DELETE"
+          method="POST"
+        >
+          <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<%- include("partials/footer") %>
