@@ -12,11 +12,17 @@ app.listen(process.env.port || 3000, function () {
   console.log("server has started");
 });
 app.use(expressSanitizer());
-mongoose.connect("mongodb://localhost/blog_app", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
-
+// mongoose.connect("mongodb://localhost/blog_app", {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+// });
+mongoose.connect(
+  "mongodb+srv://Siddharth:<password>@cluster0-thw82.mongodb.net/test?retryWrites=true&w=majority",
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }
+);
 var blogSchema = new mongoose.Schema({
   title: String,
   desc: String,
