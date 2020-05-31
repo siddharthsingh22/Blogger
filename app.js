@@ -12,21 +12,21 @@ app.listen(process.env.PORT || 3000, function () {
 	console.log("server has started");
 });
 app.use(expressSanitizer());
-// mongoose.connect("mongodb://localhost/blog_app", {
-// 	useNewUrlParser: true,
-// 	useUnifiedTopology: true,
-// });
-mongoose
-	.connect("mongodb+srv://Siddharth:siddharth@cluster0-oskol.mongodb.net/test?retryWrites=true&w=majority", {
-		useNewUrlParser: true,
-		useUnifiedTopology: true,
-	})
-	.then(() => {
-		console.log("connected to db");
-	})
-	.catch((err) => {
-		console.log("There is an error" + err.message);
-	});
+mongoose.connect("mongodb://localhost/blog_app", {
+	useNewUrlParser: true,
+	useUnifiedTopology: true,
+});
+// mongoose
+// 	.connect("mongodb+srv://Siddharth:siddharth@cluster0-oskol.mongodb.net/test?retryWrites=true&w=majority", {
+// 		useNewUrlParser: true,
+// 		useUnifiedTopology: true,
+// 	})
+// 	.then(() => {
+// 		console.log("connected to db");
+// 	})
+// 	.catch((err) => {
+// 		console.log("There is an error" + err.message);
+// 	});
 
 var blogSchema = new mongoose.Schema({
 	title: String,
